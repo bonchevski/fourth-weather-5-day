@@ -45,7 +45,7 @@ Before running the app, make sure you have the following installed on your machi
 To start the weather app, run the following command:
 
 ```shell
-npm start
+npm run dev
 ```
 
 This will start the app on your local machine. Open your web browser and visit `http://localhost:5173` to view the app.
