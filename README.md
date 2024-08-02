@@ -64,9 +64,9 @@ If you are running a Vite app, you need to perform the following additional step
 2. Serve the app:
 
     ```shell
-    npm run serve
+    npm run preview
     ```
 
-    This will start a local server and serve the app on `http://localhost:5000`.
+    This will start a local server and serve the app on `http://localhost:4173/`.
 
 Make sure to follow these steps after completing the installation and before starting the app.
