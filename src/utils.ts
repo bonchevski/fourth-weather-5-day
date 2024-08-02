@@ -31,3 +31,7 @@ export const getLocation = (): Promise<{ lat: number; lon: number }> => {
       }
     });
   };
+
+  // TODO: here we can add some more utility functions to format the days/data
+  // TODO: also we can add the stateUtility functions here, but I'd prefer them to be in a separate file stateUtils
+  // within the redux folder;

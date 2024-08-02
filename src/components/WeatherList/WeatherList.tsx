@@ -13,6 +13,7 @@ type WeatherListProps = {
 const WeatherList: React.FC<WeatherListProps> = (props: WeatherListProps) => {
   const { title, list } = props;
   const groupedByDate = useMemo(() => groupByDate(list), [list]);
+  // TODO: the object Keys can be moved to a utility fn that extracts them instead of having them here
 
   return (
     <Card title={title} bordered>

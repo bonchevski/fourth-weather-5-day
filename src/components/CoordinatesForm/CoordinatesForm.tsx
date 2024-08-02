@@ -4,6 +4,7 @@ import { fetchWeatherByCoordinates } from '../../redux/weatherSlice';
 import { useAppDispatch } from '../../redux/hooks';
 
 
+// TODO: This can be moved to a global file for validation messages
 
 const validateMessages = {
   required: '${label} is required!',
@@ -20,13 +21,9 @@ const CoordinatesForm: React.FC<CoordinatesFormProps> = ({isLoading}) => {
   
   const dispatch = useAppDispatch();
 
-  const onFinish = async (values: any) => {
+  const onFinish = async (values: {lat: number, lon: number}) => {
     const { lat, lon } = values;
-    try {
       dispatch(fetchWeatherByCoordinates({lat: lat, lon: lon}));
-    } catch (error) {
-      console.error('Error fetching weather data:', error);
-    }
   };
 
   return (

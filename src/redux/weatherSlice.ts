@@ -5,6 +5,10 @@ import {
 import { WeatherResponse, WeatherState } from "./../types/types";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+// TODO: this state can possible have additional nodes for the details of the daily weather
+// possibly there can be some utils/stateUtils that would split it into days and then have
+// normal reducers to call and group from the main data upon clicking fx on a day/date
+
 const initialState: WeatherState = {
   currentWeather: {
     cod: "",
@@ -28,6 +32,10 @@ const initialState: WeatherState = {
   isLoading: false,
 };
 
+
+// TODO: these can be moved in a seperate file 
+// in order to split the code and make it more readable
+
 export const fetchWeatherByCoordinates = createAsyncThunk(
   "weather/fetchWeatherByCoordinates",
   async (coordinates: { lat: number; lon: number }) => {
@@ -49,6 +57,9 @@ export const fetchWeatherByCityName = createAsyncThunk(
     }
   }
 );
+
+// END TODO
+
 
 const weatherSlice = createSlice({
   name: "weather",
@@ -84,6 +95,9 @@ const weatherSlice = createSlice({
     );
   },
 });
+
+// TODO: I prefer selectors in a selectors.ts file in the same folder as the slice
+// but for this example I will keep them here
 
 export const selectCurrentWeather = (state: { weather: WeatherState }) =>
   state.weather.currentWeather;

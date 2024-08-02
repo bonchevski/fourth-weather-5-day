@@ -70,3 +70,8 @@ export type WeatherResponse = {
   list: Array<WeatherData>;
   city: City;
 };
+
+// TODO: possibly it would be best to move this to the redux folder as they are mostly types used in the state
+// this is done for readability mostly
+// TODO: these can also have been interfaces with not much difference in this case but I prefered to use types
+// as they are more flexible and can be used in more places
